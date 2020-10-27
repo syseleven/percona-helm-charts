@@ -215,6 +215,6 @@ spec:
 {{ $backup.imagePullSecrets | toYaml | indent 6 }}
     {{- end }}
     storages:
-{{ $backup.storages | toYaml | indent 6 }}
+{{ include "pxc-database.storages" . | indent 6 }}
     schedule:
 {{ $backup.schedule | toYaml | indent 6 }}
